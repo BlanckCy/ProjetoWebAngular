@@ -1,0 +1,35 @@
+<div class="col-md-12" id="topo">
+    <div class="container">
+        <div class="row">          
+            <div class="col-md-12" id="topo-body">  
+                <div class="col-md-2 col-sm-auto" id="logo">
+                    <a href="../src/home.html" onclick="load()">
+                    <img [src]="logo" alt="logo" width="150" />        
+                    </a>             
+                </div>
+                <div class="col-md-8 col-sm-auto" id="topo-busca">
+                    <div id="campoBusca">
+                    <input name="txtBusca" id="txtBusca" placeholder="Buscar..." autocomplete="off"/>
+                    <button id="btnBusca" onclick="validarBusca()">Buscar</button>
+                    </div>            
+                </div>
+                <div class="col-md-1 col-sm-auto" id="icon-user">
+                    <a (click)="navigateToProdutoo()">
+                    <!-- <a href="login.html" onclick="load()"> -->
+                    <img [src]="iconUser" alt="login" />
+                    </a>
+                </div> 
+                <div class="col-md-1 col-sm-auto" id="icon-carrinho">
+                    <a href="cesta.html" onclick="load()">
+                    <img [src]="iconCar" alt="carrinho" />
+                    </a>
+                </div>
+
+                <div id="menu__btn" class="d-md-none cursor-pointer">
+                    <i class="fa-solid fa-bars text-[30px]"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-menu></app-menu>

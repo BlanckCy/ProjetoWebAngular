@@ -39,23 +39,45 @@ body {
     margin: 1%; 
 }
 
-#corpo .cardsBloco .cardItens {
-    border-color: #f74780 !important;
-    padding-bottom: 90px;
-    height: 490px;
+#corpo .cardsBloco .divCardItens .cardItens {
+  border-color: #f74780 !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-#corpo .cardsBloco .cardItens > a > img {
-    border-radius: 2%;
-    height: 300px;
+#corpo .cardsBloco .divCardItens .cardItens > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-#corpo .cardsBloco .cardItens .preco {
-    position: absolute;
-    bottom: 20px;
-    right: 16px;
-    left: 16px;
+#corpo .cardsBloco .divCardItens .cardItens > a > img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
 }
+
+#corpo .cardsBloco .divCardItens .cardItens .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#corpo .cardsBloco .divCardItens .cardItens .card-body h5.card-title {
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#corpo .cardsBloco .divCardItens .cardItens .card-body .preco {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
 
 #corpo .cardsBloco .cardItens .preco .btnCompra {
     border-color: #f74780 !important;
@@ -66,13 +88,8 @@ body {
 
 #corpo .cardsBloco .cardItens .btnCompra:hover {
     background-color: #f74780 !important;
-    color: white;
+    color: #ffffff !important;
     font-weight: bolder;
-}
-
-.footer {
-    background-color: #ffc1d5;
-    display: flex;
 }
 
 @media screen and (max-width: 720px) {

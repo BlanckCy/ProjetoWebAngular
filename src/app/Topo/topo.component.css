@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#topo {
+    background-color: #ffc1d5;
+}
+
+#topo #topo-body {
+    margin: 1% auto;
+    display: flex;
+    align-items: center;
+}
+
+#topo #topo-body #logo {
+    display: flex;
+    justify-content: center;
+}
+
+#topo #topo-body #topo-busca {
+    justify-content: center;
+    display: flex;
+}
+
+#topo #topo-body #topo-busca #campoBusca{
+    background-color:#faeef1;
+    border:solid 2px #f74780 ;
+    border-radius:10px;
+    width: 70%;
+    display: flex;
+}
+
+#topo #topo-body #topo-busca #campoBusca #txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-size:18px;
+    border:none;
+    width:100%;
+    height: 40px;
+    border-bottom-left-radius: 9px;
+    border-top-left-radius: 9px;
+}
+
+#topo #topo-body #topo-busca #campoBusca #btnBusca{
+    border:none;
+    float:left;
+    border-radius:0 7px 7px 0;
+    width: auto;
+    font-weight:bold;
+    background:#f74780 ;
+}
+
+#topo #topo-body #icon-user {
+    display: flex;
+    justify-content: center;
+    width: 55px;
+    margin: auto;
+}
+
+#topo #topo-body #icon-carrinho {
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    #topo #topo-body #icon-user {
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        margin: auto;
+    }
+
+    #topo #topo-body #icon-carrinho {
+        display: flex;
+        justify-content: center;
+        width: 80px;
+        margin: auto;
+    }
+
+    #topo #topo-body #logo {
+        width: 120px;
+    }
+
+    #topo #topo-body #topo-busca #campoBusca #txtBusca{
+        font-size:16px;
+        height: 35px;
+    }
+  }

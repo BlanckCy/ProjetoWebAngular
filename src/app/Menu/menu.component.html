@@ -1,0 +1,30 @@
+<div class="menu">
+    <ul class="categories">
+      <li (mouseover)="showSubcategoriesCaneca = true" (mouseout)="showSubcategoriesCaneca = false">
+        CANECAS
+        <ul class="subcategories" [class.show]="showSubcategoriesCaneca">
+          <li>Anime</li>
+          <li>Marvel</li>
+          <li>DC</li>
+        </ul>
+      </li>
+      <li (mouseover)="showSubcategoriesFunko = true" (mouseout)="showSubcategoriesFunko = false">
+        FUNKOS
+        <ul class="subcategories" [class.show]="showSubcategoriesFunko">
+          <li>Anime</li>
+          <li>Marvel</li>
+          <li>DC</li>
+        </ul>
+      </li>
+      <li (mouseover)="showSubcategoriesChaveiro = true" (mouseout)="showSubcategoriesChaveiro = false">
+        CHAVEIROS
+        <ul class="subcategories" [class.show]="showSubcategoriesChaveiro">
+          <li>Anime</li>
+          <li>Marvel</li>
+          <li>DC</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <hr class="menu-divider">
+  
