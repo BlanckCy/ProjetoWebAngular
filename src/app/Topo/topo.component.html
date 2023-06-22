@@ -3,7 +3,7 @@
         <div class="row">          
             <div class="col-md-12" id="topo-body">  
                 <div class="col-md-2 col-sm-auto" id="logo">
-                    <a href="../src/home.html" onclick="load()">
+                    <a (click)="navigateToHome()" style="cursor: pointer;">
                     <img [src]="logo" alt="logo" width="150" />        
                     </a>             
                 </div>
@@ -14,13 +14,12 @@
                     </div>            
                 </div>
                 <div class="col-md-1 col-sm-auto" id="icon-user">
-                    <a (click)="navigateToProdutoo()">
-                    <!-- <a href="login.html" onclick="load()"> -->
+                    <a (click)="navigateToLogin()" style="cursor: pointer;">
                     <img [src]="iconUser" alt="login" />
                     </a>
                 </div> 
                 <div class="col-md-1 col-sm-auto" id="icon-carrinho">
-                    <a href="cesta.html" onclick="load()">
+                    <a (click)="navigateToCarrinho()" style="cursor: pointer;">
                     <img [src]="iconCar" alt="carrinho" />
                     </a>
                 </div>
@@ -30,6 +29,11 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div *ngIf="loading" class="loading-overlay">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
     </div>
 </div>
 <app-menu></app-menu>

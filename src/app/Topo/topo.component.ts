@@ -11,13 +11,43 @@ export class TopoComponent {
   iconUser = 'assets/icon-user.png';
   iconCar = 'assets/icon-carrinho.png';
 
+  loading = false;
+
   constructor(private router: Router) {}
 
-  navigateToCliente() {
-    this.router.navigate(['/cliente']); 
+  navigateToProduto() {
+    this.loading = true;
+    setTimeout(() => {
+      this.router.navigateByUrl('/produto').then(() => {
+        this.loading = false;
+      });
+    }, 1000);
   }
 
-  navigateToProdutoo() {
-    this.router.navigateByUrl('/produto');
+  navigateToLogin() {
+    this.loading = true;
+    setTimeout(() => {
+      this.router.navigateByUrl('/login').then(() => {
+        this.loading = false;
+      });
+    }, 1000);
+  }
+
+  navigateToHome() {
+    this.loading = true;
+    setTimeout(() => {
+      this.router.navigateByUrl('').then(() => {
+        this.loading = false;
+      });
+    }, 1000);    
+  }
+
+  navigateToCarrinho() {
+    this.loading = true;
+    setTimeout(() => {
+      this.router.navigateByUrl('/carrinho').then(() => {
+        this.loading = false;
+      });
+    }, 1000);  
   }
 }
