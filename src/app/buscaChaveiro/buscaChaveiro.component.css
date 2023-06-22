@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.escolha{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    justify-content: center;
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.escolha .divPromo {
+    display: flex;
+    justify-content: center;
+}
+
+.escolha .promo{
+    border:solid 2px #f74780 !important;
+    background-color: #faeef1 !important;
+    color: black !important; 
+    width: 200px;
+}
+
+.resultado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultado > h2 > b{
+    text-decoration: underline #f74780;
+}
+
+.menu {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.menu .card{
+    margin: 1%; 
+    border:solid 1px #f74780 !important;
+    width: 20rem;
+    padding-bottom: 90px;
+}
+
+.menu .card > a > img {
+    height: 400px;
+}
+
+.menu .card .iconHeart{
+    color: #f74780;
+}
+
+.menu .card .tituloGeral{
+    font-size: 18px !important;
+}
+
+.menu .card .preco {
+    position: absolute;
+    right: 16px;
+    left: 16px;
+    bottom: 20px;
+}
+
+
+.menu .card .preco .btncompra {
+    border-color: #f74780 !important;
+    color: #f74780;
+    font-weight: bolder; 
+    width: 100%;          
+}
+
+.menu .card .preco .btncompra:hover {
+    background-color: #f74780 !important;
+    color: white;
+    font-weight: bolder;
+}
+
+.footer {
+    background-color: #ffc1d5;
+}
+
+@media screen and (max-width: 720px) {
+    .escolha{
+        padding-left: 12px;
+        padding-right: 12px;
+        gap: 10px;
+    }
+
+    .escolha .promo{
+        width: 120px;
+    }
+
+    .menu .card > a > img {
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 721px) and (max-width: 1060px) {
+    .escolha{
+        padding-left: 12px;
+        padding-right: 12px;
+        gap: 10px;
+    }
+
+    .escolha .promo{
+        width: 120px;
+    }
+
+    .menu .card > a > img {
+        height: 300px;
+    }
+
+    .menu .card{
+        width: 13rem;
+    }
+}
