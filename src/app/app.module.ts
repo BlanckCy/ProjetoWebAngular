@@ -13,6 +13,9 @@ import { TopoComponent } from './Topo/topo.component';
 import { FooterComponent } from './Footer/footer.component';
 import { MenuComponent } from './Menu/menu.component';
 import { PrincipalComponent } from './Principal/principal.component';
+// import { DescricaofunkoComponent } from './descricaofunko/descricaofunko.component';
+import { DescricaochaveiroComponent } from './descricaochaveiro/descricaochaveiro.component';
+
 
 
 @NgModule({
@@ -23,13 +26,16 @@ import { PrincipalComponent } from './Principal/principal.component';
     MenuComponent,
     PrincipalComponent,
     // UsuarioComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    // DescricaofunkoComponent,
+    DescricaochaveiroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
