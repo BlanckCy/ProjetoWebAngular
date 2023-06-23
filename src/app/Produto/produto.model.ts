@@ -3,7 +3,7 @@ export class ProdutoModel {
     public nome: String;
     public descricao: String;
     public categoria : String ;
-    public valor: Number;
+    public valor: String;
     public quantidade: Number;
 
     public constructor(){
@@ -11,7 +11,7 @@ export class ProdutoModel {
         this.nome="";
         this.descricao="";
         this.categoria="";
-        this.valor=0;
+        this.valor="0";
         this.quantidade=0;    
     }
 }

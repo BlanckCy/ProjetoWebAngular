@@ -8,16 +8,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 cardsBloco">
+      <div *ngFor="let produto of produtosCaneca" class="col-md-12 cardsBloco">
         <div class="col-md-3 divCardItens">
           <div class="card cardItens">
             <a href="" onclick="load()">
               <img src="https://img.elo7.com.br/product/zoom/2B9D217/caneca-geek-stuff-48-herois.jpg" alt="Caneca Heróis DC">
             </a>
             <div class="card-body">
-              <h5 class="card-title">Caneca Heróis DC</h5>
+              <h5 class="card-title">{{produto.nome}}</h5><!-- Caneca Heróis DC -->
               <div class="preco">
-                <p class="card-text">Por <b>R$ 59,90</b></p>
+                <p class="card-text">Por <b>R$ {{produto.valor}}</b></p><!-- 59,90 -->
                 <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
               </div>
             </div>

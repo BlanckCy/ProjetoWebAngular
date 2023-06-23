@@ -11,7 +11,7 @@ export class ProdutoService {
 
   public insert(obj : ProdutoModel) : string{    
     let mensagem = "";
-    this.http.post<String>("http://localhost:8090/api/produto/insert/", obj).subscribe({
+    this.http.post<String>("http://localhost:8070/api/produto/insert/", obj).subscribe({
       next: data =>
       {
         mensagem = "Registro salvo com sucesso!";
@@ -26,7 +26,7 @@ export class ProdutoService {
 
   public update(obj: ProdutoModel): string{
     let mensagem = "";
-    this.http.put<String>("http://localhost:8090/api/produto/update/", obj).subscribe({
+    this.http.put<String>("http://localhost:8070/api/produto/update/", obj).subscribe({
       next: data =>
       {
         mensagem = "Registro alterado com sucesso!";
@@ -41,7 +41,7 @@ export class ProdutoService {
 
   public delete(obj: ProdutoModel) :string{    
     let mensagem = "";
-    this.http.delete<String>("http://localhost:8090/api/produto/delete/"+ obj.idproduto+"/").subscribe({
+    this.http.delete<String>("http://localhost:8070/api/produto/delete/"+ obj.idproduto+"/").subscribe({
       next: data =>
       {
         mensagem = "Registro deletado com sucesso!";
@@ -55,11 +55,11 @@ export class ProdutoService {
   } 
   
   public loadinfo(codigo: Number): Observable<ProdutoModel>{
-    return this.http.get<ProdutoModel>("http://localhost:8090/api/produto/loadinfo/"+codigo+"/");         
+    return this.http.get<ProdutoModel>("http://localhost:8070/api/produto/loadinfo/"+codigo+"/");         
   }
 
   public listar() :  Observable<ProdutoModel[]>{    
-    return this.http.get<ProdutoModel[]>("http://localhost:8090/api/produto/loadinfo/");      
+    return this.http.get<ProdutoModel[]>("http://localhost:8070/api/produto/loadinfo/");      
   }
   
 }
