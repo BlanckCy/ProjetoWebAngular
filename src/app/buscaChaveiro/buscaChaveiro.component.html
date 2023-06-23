@@ -1,0 +1,139 @@
+
+  <div class="inicio">
+        <section>
+      <div class="container">
+        <div class="row">        
+          <div class="col-md-12 escolha">
+            <div class="col-md-3 divPromo">             
+              <button type="button" class="btn btn-primary promo"><i class="bi bi-gem"></i><h6>1ª COMPRA</h6></button><!--PROMOS-->
+            </div>
+            <div class="col-md-3 divPromo">             
+              <button type="button" class="btn btn-primary promo"><i class="bi bi-gem"></i><h6>CASH BACK</h6></button>
+            </div>
+            <div class="col-md-3 divPromo">
+              <button type="button" class="btn btn-primary promo"><i class="bi bi-gem"></i><h6>VALE PRESENTE</h6></button>
+            </div>
+            <div class="col-md-3 divPromo">
+              <button type="button" class="btn btn-primary promo"><i class="bi bi-gem"></i><h6>LIQUIDA</h6></button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 resultado">
+            <h2>Resultado de Busca: <b>Chaveiro</b></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 menu"> <!--MENU-->
+            <div class="col-md-4 card "> <!--CARDS-->
+              <a (click)="navigateToChaveiroBatman()">
+                <img [src]= "ChaveiroBatman" class="card-img-top cardproduto" width="10" alt="Chaveiro Batman">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Chaveiro Batman</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 29,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 card">
+              <a (click)="navigateToChaveiroDragon()">
+                <img [src]= "ChaveiroDragon" class="card-img-top cardproduto" alt="Chaveiro Batman">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Chaveiro Dragon Ball</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 29,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 card">
+              <a (click)="navigateToChaveiroGroot()">
+                <img [src]= "ChaveiroGroot" class="card-img-top cardproduto" alt="Chaveiro Groot">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-half iconHeart"></i>
+                <h5 class="card-title tituloGeral">Chaveiro Groot</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 39,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 menu">
+            <div class="col-md-4 card">
+              <a (click)="navigateToChaveiroNaruto()">
+                <img [src]= "ChaveiroNaruto" class="card-img-top" alt="Chaveiro Naruto">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Chaveiro Naruto</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 29,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 card">
+              <a href="detalheProdutoBY.html" onclick="load()">
+                <img src="https://geekvip.com.br/wp-content/uploads/2020/12/chaveiro-baby-yoda-pod-600x600.jpg" class="card-img-top" alt="Chaveiro Shazam!">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Chaveiro Baby Yoda</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 39,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 card">
+              <a (click)="navigateToChaveiroStarWars()">
+                <img [src]= "ChaveiroStarWars" class="card-img-top" alt="Chaveiro Star Wars">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Chaveiro Star Wars</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 59,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- fim corpo-->
+  </div>
