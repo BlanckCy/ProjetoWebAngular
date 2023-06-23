@@ -5,12 +5,14 @@ import { PrincipalComponent } from './Principal/principal.component';
 import { ProdutoComponent } from './Produto/produto.component';
 import { CadastroComponent } from './Cadastro/cadastro.component';
 import { LoginComponent } from './Login/login.component';
+import { BuscaCanecaComponent } from './buscaCaneca/buscaCaneca.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent },
   { path: 'produto', component: ProdutoComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'buscaCaneca', component: BuscaCanecaComponent}
 
 ];
 

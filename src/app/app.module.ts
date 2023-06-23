@@ -15,6 +15,7 @@ import { MenuComponent } from './Menu/menu.component';
 import { PrincipalComponent } from './Principal/principal.component';
 import { ClienteComponent } from './Cliente/cliente.component';
 import { LoginComponent } from './Login/login.component';
+import { BuscaCanecaComponent } from './buscaCaneca/buscaCaneca.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LoginComponent } from './Login/login.component';
     // UsuarioComponent,
     ProdutoComponent,
     ClienteComponent,
-    LoginComponent
+    LoginComponent,
+    BuscaCanecaComponent
   ],
   imports: [
     BrowserModule,
