@@ -1,0 +1,141 @@
+  <div class="inicio">
+    <!--Início Menu -->
+    <!-- Inicio Corpo -->
+    <!-- <section> -->
+      <div class="container">
+        <div class="row">        
+          <div class="col-md-12 escolha">
+            <div class="col-md-3 divPromo">             
+              <button type="button" class="btn btn-primary promo"><i class="bi bi-gem"></i><h6>1ª COMPRA</h6></button><!--PROMOS-->
+            </div>
+            <div class="col-md-3 divPromo">             
+              <button type="button" class="btn btn-primary promo"><i class="bi bi-gem"></i><h6>CASH BACK</h6></button>
+            </div>
+            <div class="col-md-3 divPromo">
+              <button type="button" class="btn btn-primary promo"><i class="bi bi-gem"></i><h6>VALE PRESENTE</h6></button>
+            </div>
+            <div class="col-md-3 divPromo">
+              <button type="button" class="btn btn-primary promo"><i class="bi bi-gem"></i><h6>LIQUIDA</h6></button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 resultado">
+            <h2>Resultado de Busca: <b>Canecas</b></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 menu"> <!--MENU-->
+            <div *ngFor="let produto of produtosCaneca" class="col-md-4 card"> <!--CARDS-->
+              <a (click)="navigateToCanecaBabyYoda()">
+                <img [src]= "produto.url" class="card-img-top cardproduto" alt="{{produto.nome}}">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">{{produto.nome}}</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ {{produto.valorFormatado}}</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>          
+            <!-- <div class="col-md-4 card">
+              <a (click)="navigateToCanecaSuperMan()">
+                <img  [src]="CanecaSuperMan"  class="card-img-top cardproduto" alt="Caneca Superman">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Caneca Superman</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 59,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 card">
+              <a (click)="navigateToCanecaChihiro()">
+                <img [src]="CanecaChihiro" class="card-img-top cardproduto" alt="Caneca a Viagem de Chihiro">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-half iconHeart"></i> 
+                <h5 class="card-title tituloGeral">Caneca A Viagem de Chihiro</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 59,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>-->
+          </div>
+        </div> 
+        <!-- <div class="row">
+          <div class="col-md-12 menu">
+            <div class="col-md-4 card">
+              <a (click)="navigateToCanecaDumbo()">
+                <img [src]="CanecaDumbo"  class="card-img-top" alt="Caneca Dumbo">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Caneca Dumbo</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 59,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 card">
+              <a (click)="navigateToanecaCapitaoMarvel()">
+                <img [src]="CanecaCapitaoMarvel" class="card-img-top" alt="Caneca Capitã Marvel">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Caneca Capitã Marvel</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 59,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 card">
+              <a (click)="navigateToCanecaSailorMoon()">
+                <img [src]="CanecaSailorMoon" class="card-img-top" alt="Caneca Sailor Moon">
+              </a>
+              <div class="card-body">
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <i class="bi bi-heart-fill iconHeart"></i>
+                <h5 class="card-title tituloGeral">Caneca Sailor Moon</h5>
+                <div class="preco">
+                  <p class="card-text">Por <b>R$ 59,90</b></p>
+                  <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
+                </div>
+              </div>
+            </div>
+            
+          </div> 
+        </div>
+      </div> -->
+    <!-- </section> -->
+    <!-- fim corpo-->
+  </div>

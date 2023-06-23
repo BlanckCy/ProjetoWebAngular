@@ -1,59 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProdutoModel } from '../Produto/produto.model';
 import { ProdutoService } from '../Produto/produto.service';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-principal',
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  selector: 'app-buscaCaneca',
+  templateUrl: './buscaCaneca.component.html',
+  styleUrls: ['./buscaCaneca.component.css']
 })
-export class PrincipalComponent implements OnInit {
+
+export class BuscaCanecaComponent implements OnInit{ 
+  caminhoRotaCaneca   = '';
+  caminhoRotaFunko    = '';
+  caminhoRotaChaveiro = '';
+
   public produtos: ProdutoModel[] = [];
   public produtosCaneca: ProdutoModel[] = [];
   public produtosFunko: ProdutoModel[] = [];
   public produtosChaveiro: ProdutoModel[] = [];
 
-  caminhoRotaCaneca   = '';
-  caminhoRotaFunko    = '';
-  caminhoRotaChaveiro = '';
-  loading = false;
-
   constructor(private produtoService: ProdutoService, private router: Router) {}
-
-  navigateToCaneca(){
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate([this.caminhoRotaCaneca]).then(() => {
-        this.loading = false;
-      });
-    }, 1000),
-    () => {
-      this.loading = false;
-    }; 
-  }
-  navigateToFunko(){
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate([this.caminhoRotaFunko]).then(() => {
-        this.loading = false;
-      });
-    }, 1000),
-    () => {
-      this.loading = false;
-    }; 
-  }
-  navigateToChaveiro(){
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate([this.caminhoRotaChaveiro]).then(() => {
-        this.loading = false;
-      });
-    }, 1000),
-    () => {
-      this.loading = false;
-    };    
-  }
 
   ngOnInit() {
     this.listarProdutos();
@@ -86,6 +52,30 @@ export class PrincipalComponent implements OnInit {
         console.error('Ocorreu um erro ao listar os produtos de caneca:', error);
       }
     );
-  }  
+  }
 
+  navigateToCanecaBabyYoda() {
+    this.router.navigate(['/descricao-baby-yoda']); 
+  }
+
+  navigateToCanecaSuperMan() {
+    this.router.navigate(['/descricao-superman']); 
+  }
+
+  navigateToCanecaChihiro() {
+    this.router.navigate(['/descricao-chihiro']); 
+  }
+
+  navigateToCanecaDumbo() {
+    this.router.navigate(['/descricao-dumbo']); 
+  }
+
+  navigateToanecaCapitaoMarvel() {
+    this.router.navigate(['/descricao-captao-marvel']); 
+  }
+
+  navigateToCanecaSailorMoon() {
+    this.router.navigate(['/descricao-sailor-moon']); 
+  }
+ 
 }

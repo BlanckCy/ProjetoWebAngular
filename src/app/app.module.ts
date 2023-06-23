@@ -15,7 +15,9 @@ import { MenuComponent } from './Menu/menu.component';
 import { PrincipalComponent } from './Principal/principal.component';
 // import { DescricaofunkoComponent } from './descricaofunko/descricaofunko.component';
 import { DescricaochaveiroComponent } from './descricaochaveiro/descricaochaveiro.component';
-
+import { ClienteComponent } from './Cliente/cliente.component';
+import { LoginComponent } from './Login/login.component';
+import { BuscaCanecaComponent } from './buscaCaneca/buscaCaneca.component';
 
 
 @NgModule({
@@ -29,6 +31,9 @@ import { DescricaochaveiroComponent } from './descricaochaveiro/descricaochaveir
     ProdutoComponent,
     // DescricaofunkoComponent,
     DescricaochaveiroComponent
+    ClienteComponent,
+    LoginComponent,
+    BuscaCanecaComponent
   ],
   imports: [
     BrowserModule,
