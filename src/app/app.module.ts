@@ -13,6 +13,11 @@ import { TopoComponent } from './Topo/topo.component';
 import { FooterComponent } from './Footer/footer.component';
 import { MenuComponent } from './Menu/menu.component';
 import { PrincipalComponent } from './Principal/principal.component';
+// import { DescricaofunkoComponent } from './descricaofunko/descricaofunko.component';
+import { DescricaochaveiroComponent } from './descricaochaveiro/descricaochaveiro.component';
+import { ClienteComponent } from './Cliente/cliente.component';
+import { LoginComponent } from './Login/login.component';
+import { BuscaCanecaComponent } from './buscaCaneca/buscaCaneca.component';
 
 
 @NgModule({
@@ -23,13 +28,19 @@ import { PrincipalComponent } from './Principal/principal.component';
     MenuComponent,
     PrincipalComponent,
     // UsuarioComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    // DescricaofunkoComponent,
+    DescricaochaveiroComponent,
+    ClienteComponent,
+    LoginComponent,
+    BuscaCanecaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

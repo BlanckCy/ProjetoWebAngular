@@ -8,49 +8,25 @@
       </div>
     </div>
     <div class="row">
-      <div *ngFor="let produto of produtosCaneca" class="col-md-12 cardsBloco">
-        <div class="col-md-3 divCardItens">
-          <div class="card cardItens">
-            <a href="" onclick="load()">
-              <img src="https://img.elo7.com.br/product/zoom/2B9D217/caneca-geek-stuff-48-herois.jpg" alt="Caneca Heróis DC">
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">{{produto.nome}}</h5><!-- Caneca Heróis DC -->
-              <div class="preco">
-                <p class="card-text">Por <b>R$ {{produto.valor}}</b></p><!-- 59,90 -->
-                <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
-              </div>
+      <div class="col-md-12 cardsBloco">
+        <ng-container *ngFor="let produto of produtosCaneca; let i=index">
+          <ng-container *ngIf="i < 3">
+            <div class="col-md-3 divCardItens" >          
+              <div class="card cardItens">
+                <a class="cursor-pointer" (click)="navigateToCaneca(produto.idproduto)">
+                  <img [src]="produto.url" alt="{{produto.nome}}">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">{{produto.nome}}</h5>
+                  <div class="preco">
+                    <p class="card-text">Por <b>R$ {{produto.valorFormatado}}</b></p>
+                    <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
+                  </div>
+                </div>
+              </div>          
             </div>
-          </div>
-        </div>
-        <div class="col-md-3 divCardItens">
-          <div class="card cardItens">
-            <a href="" onclick="load()">
-              <img src="https://img.elo7.com.br/product/zoom/2F7F8BA/caneca-geek-stuff-59.jpg" alt="Caneca Super Mario">
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Caneca Super Mario</h5>
-              <div class="preco">
-                <p class="card-text">Por <b>R$ 59,90</b></p>
-                <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 divCardItens">
-          <div class="card cardItens">
-            <a href="" onclick="load()">
-              <img src="https://img.elo7.com.br/product/zoom/2F7FAB3/caneca-star-wars.jpg" alt="Caneca Star Wars">
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Caneca Star Wars</h5>
-              <div class="preco">
-                <p class="card-text">Por <b>R$ 59,90</b></p>
-                <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>              
+          </ng-container>
+        </ng-container>            
       </div>
     </div>
     
@@ -63,49 +39,20 @@
     </div>
     <div class="row">
       <div class="col-md-12 cardsBloco">
-        <div class="col-md-3 divCardItens">
+        <div class="col-md-3 divCardItens" *ngFor="let produto of produtosFunko">
           <div class="card cardItens">
-            <a href="" onclick="load()">
-              <img src="https://i5.walmartimages.com/asr/d1c402dd-2979-4809-a712-bcd6ccd5f3b9_1.b1b93dff126b68f8793ec5fc68ed5261.png?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Funko Batman">
+            <a class="cursor-pointer" (click)="navigateToFunko(produto.idproduto)">
+              <img [src]="produto.url" alt="{{produto.nome}}">
             </a>
             <div class="card-body">
-              <h5 class="card-title">Funko Batman</h5>
+              <h5 class="card-title">{{produto.nome}}</h5>
               <div class="preco">
-                <p class="card-text">Por <b>R$ 119,90</b></p>
+                <p class="card-text">Por <b>R$ {{produto.valorFormatado}}</b></p>
                 <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-3 divCardItens">
-          <div class="card cardItens">
-            <a href="detalheProdutoMM.html" onclick="load()">
-              <img src="https://atacado.lojatoys4fun.com.br/media/catalog/product/cache/c6cb0d9eb407599e4eb00f17c03af209/m/u/mulher_maravilha_wonder_woman_classic_with_cape_.png" alt="Funko Mulher Maravilha">
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Funko Mulher Maravilha</h5>
-              <div class="preco">
-                <p class="card-text">Por <b>R$ 149,90</b></p>
-                <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 divCardItens">
-          <div class="card cardItens">
-            <a href="" onclick="load()">
-              <img src="https://i5.walmartimages.com/asr/92f5b646-07c3-4ace-88b1-01473016052c_2.4c29df268785dfeaa77933b87ce536d1.png?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Funko Pennywise">
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Funko Pennywise</h5>
-              <div class="preco">
-                <p class="card-text">Por <b>R$ 199,90</b></p>
-                <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>              
-      </div>
     </div>
 
     <div class="row">          
@@ -116,50 +63,27 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 mb-2 cardsBloco">
-        <div class="col-md-3 divCardItens">
+      <div class="col-md-12 cardsBloco">
+        <div class="col-md-3 divCardItens" *ngFor="let produto of produtosChaveiro">
           <div class="card cardItens">
-            <a href="" onclick="load()">
-              <img src="https://geekvip.com.br/wp-content/uploads/2020/12/chaveiro-cute-super-man.jpg" alt="Chaveiro Superman">
+            <a class="cursor-pointer" (click)="navigateToChaveiro(produto.idproduto)">
+              <img [src]="produto.url" alt="{{produto.nome}}">
             </a>
             <div class="card-body">
-              <h5 class="card-title">Chaveiro Superman</h5>
+              <h5 class="card-title">{{produto.nome}}</h5>
               <div class="preco">
-                <p class="card-text">Por <b>R$ 39,90</b></p>
+                <p class="card-text">Por <b>R$ {{produto.valorFormatado}}</b></p>
                 <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3 divCardItens">
-          <div class="card cardItens">
-            <a href="detalheProdutoBY.html" onclick="load()">
-              <img src="https://geekvip.com.br/wp-content/uploads/2020/12/chaveiro-baby-yoda-pod-600x600.jpg" alt="Chaveiro Yoda">
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Chaveiro Yoda</h5>
-              <div class="preco">
-                <p class="card-text">Por <b>R$ 39,90</b></p>
-                <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 divCardItens">
-          <div class="card cardItens">
-            <a href="" onclick="load()">
-              <img src="https://geekvip.com.br/wp-content/uploads/2021/01/Chaveiro-Divertida-Geek-Cute-Naruto-Presente-Criativo-600x600.jpg" alt="Chaveiro Naruto">
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">Chaveiro Naruto</h5>
-              <div class="preco">
-                <p class="card-text">Por <b>R$ 39,90</b></p>
-                <a href="#" class="btn btn-outline-success btnCompra">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>              
+        </div>             
       </div>
     </div>
+  </div>
+</div>
+<div *ngIf="loading" class="loading-overlay">
+  <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
   </div>
 </div>

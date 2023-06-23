@@ -4,11 +4,11 @@ import { ProdutoService } from '../Produto/produto.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-principal',
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  selector: 'app-descricaofunko',
+  templateUrl: './descricaofunko.component.html',
+  styleUrls: ['./descricaofunko.component.css']
 })
-export class PrincipalComponent implements OnInit {
+export class descricaofunkoComponent implements OnInit {
   public produtos: ProdutoModel[] = [];
   public produtosCaneca: ProdutoModel[] = [];
   public produtosFunko: ProdutoModel[] = [];
@@ -17,47 +17,10 @@ export class PrincipalComponent implements OnInit {
   caminhoRotaCaneca   = '';
   caminhoRotaFunko    = '';
   caminhoRotaChaveiro = '';
-  caminhoRota = '';
   loading = false;
+  imagem = 'assets/funko_mulher_maravilha.png';
 
   constructor(private produtoService: ProdutoService, private router: Router) {}
-
-  navigateToCaneca(codigo: number){
-    console.log(codigo)
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate([this.caminhoRotaCaneca]).then(() => {
-        this.loading = false;
-      });
-    }, 1000),
-    () => {
-      this.loading = false;
-    }; 
-  }
-  navigateToFunko(codigo: number){
-    this.verificarProduto(codigo);
-    console.log(codigo)
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate([this.caminhoRota]).then(() => {
-        this.loading = false;
-      });
-    }, 1000),
-    () => {
-      this.loading = false;
-    }; 
-  }
-  navigateToChaveiro(codigo: number){
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate([this.caminhoRotaChaveiro]).then(() => {
-        this.loading = false;
-      });
-    }, 1000),
-    () => {
-      this.loading = false;
-    };    
-  }
 
   ngOnInit() {
     this.listarProdutos();
@@ -90,14 +53,16 @@ export class PrincipalComponent implements OnInit {
         console.error('Ocorreu um erro ao listar os produtos de caneca:', error);
       }
     );
-  }  
-
+  } 
+  
   verificarProduto(codigo: number){
     this.produtoService.loadinfo(codigo).subscribe(
       (data: ProdutoModel) => {
-        console.log(data)
-        let partes: string[] = data.url.split(".");
-        this.caminhoRota = 'produto-'+partes[0];
+        this.produtosCaneca.forEach(produto => {
+          produto.valorFormatado = produto.valor.toFixed(2).replace('.', ',');
+          produto.url = 'assets/'+produto.url;
+          this.caminhoRotaCaneca = produto.nome.replace(/ /g, '-').toLowerCase().trim();
+        });
       },
       (error) => {
         console.error('Ocorreu um erro ao listar os produtos de caneca:', error);

@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-md-8 col-sm-auto" id="topo-busca">
                     <div id="campoBusca">
-                    <input name="txtBusca" id="txtBusca" placeholder="Buscar..." autocomplete="off"/>
-                    <button id="btnBusca" onclick="validarBusca()">Buscar</button>
+                    <input name="txtBusca" id="txtBusca" placeholder="Buscar..." [(ngModel)]="txtBusca" autocomplete="off"/>
+                    <button id="btnBusca" (click)="validarBusca()">Buscar</button>
                     </div>            
                 </div>
                 <div class="col-md-1 col-sm-auto" id="icon-user">
