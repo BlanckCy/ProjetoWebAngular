@@ -13,7 +13,7 @@
           <ng-container *ngIf="i < 3">
             <div class="col-md-3 divCardItens" >          
               <div class="card cardItens">
-                <a class="cursor-pointer" (click)="navigateToCaneca()">
+                <a class="cursor-pointer" (click)="navigateToCaneca(produto.idproduto)">
                   <img [src]="produto.url" alt="{{produto.nome}}">
                 </a>
                 <div class="card-body">
@@ -41,7 +41,7 @@
       <div class="col-md-12 cardsBloco">
         <div class="col-md-3 divCardItens" *ngFor="let produto of produtosFunko">
           <div class="card cardItens">
-            <a class="cursor-pointer" (click)="navigateToFunko()">
+            <a class="cursor-pointer" (click)="navigateToFunko(produto.idproduto)">
               <img [src]="produto.url" alt="{{produto.nome}}">
             </a>
             <div class="card-body">
@@ -66,7 +66,7 @@
       <div class="col-md-12 cardsBloco">
         <div class="col-md-3 divCardItens" *ngFor="let produto of produtosChaveiro">
           <div class="card cardItens">
-            <a class="cursor-pointer" (click)="navigateToChaveiro()">
+            <a class="cursor-pointer" (click)="navigateToChaveiro(produto.idproduto)">
               <img [src]="produto.url" alt="{{produto.nome}}">
             </a>
             <div class="card-body">

@@ -30,7 +30,7 @@ import { BuscaCanecaComponent } from './buscaCaneca/buscaCaneca.component';
     // UsuarioComponent,
     ProdutoComponent,
     // DescricaofunkoComponent,
-    DescricaochaveiroComponent
+    DescricaochaveiroComponent,
     ClienteComponent,
     LoginComponent,
     BuscaCanecaComponent

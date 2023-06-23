@@ -17,11 +17,13 @@ export class PrincipalComponent implements OnInit {
   caminhoRotaCaneca   = '';
   caminhoRotaFunko    = '';
   caminhoRotaChaveiro = '';
+  caminhoRota = '';
   loading = false;
 
   constructor(private produtoService: ProdutoService, private router: Router) {}
 
-  navigateToCaneca(){
+  navigateToCaneca(codigo: number){
+    console.log(codigo)
     this.loading = true;
     setTimeout(() => {
       this.router.navigate([this.caminhoRotaCaneca]).then(() => {
@@ -32,10 +34,12 @@ export class PrincipalComponent implements OnInit {
       this.loading = false;
     }; 
   }
-  navigateToFunko(){
+  navigateToFunko(codigo: number){
+    this.verificarProduto(codigo);
+    console.log(codigo)
     this.loading = true;
     setTimeout(() => {
-      this.router.navigate([this.caminhoRotaFunko]).then(() => {
+      this.router.navigate([this.caminhoRota]).then(() => {
         this.loading = false;
       });
     }, 1000),
@@ -43,7 +47,7 @@ export class PrincipalComponent implements OnInit {
       this.loading = false;
     }; 
   }
-  navigateToChaveiro(){
+  navigateToChaveiro(codigo: number){
     this.loading = true;
     setTimeout(() => {
       this.router.navigate([this.caminhoRotaChaveiro]).then(() => {
@@ -87,5 +91,18 @@ export class PrincipalComponent implements OnInit {
       }
     );
   }  
+
+  verificarProduto(codigo: number){
+    this.produtoService.loadinfo(codigo).subscribe(
+      (data: ProdutoModel) => {
+        console.log(data)
+        let partes: string[] = data.url.split(".");
+        this.caminhoRota = 'produto-'+partes[0];
+      },
+      (error) => {
+        console.error('Ocorreu um erro ao listar os produtos de caneca:', error);
+      }
+    );
+  }
 
 }
