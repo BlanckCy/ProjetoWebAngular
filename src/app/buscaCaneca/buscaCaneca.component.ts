@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProdutoModel } from '../Produto/produto.model';
+import { ProdutoService } from '../Produto/produto.service';
 
 @Component({
   selector: 'app-buscaCaneca',
@@ -7,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./buscaCaneca.component.css']
 })
 
-export class BuscaCanecaComponent {
+export class BuscaCanecaComponent implements OnInit{
   CanecaBabyYoda = 'assets/caneca_baby_yoda.png';
   CanecaSuperMan = 'assets/caneca_superman.png';
   CanecaChihiro = 'assets/caneca_chihiro.png';
@@ -15,10 +17,35 @@ export class BuscaCanecaComponent {
   CanecaCapitaoMarvel = 'assets/caneca_captao_marvel.png';
   CanecaSailorMoon = 'assets/caneca_sailormoon.png';  
 
+  public produtos: ProdutoModel[] = [];
+  public produtosCaneca: ProdutoModel[] = [];
+  public produtosFunko: ProdutoModel[] = [];
+  public produtosChaveiro: ProdutoModel[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private produtoService: ProdutoService, private router: Router) {}
 
-  
+  ngOnInit() {
+    this.listarProdutos();
+  }
+
+  listarProdutos() {
+    this.produtoService.listar().subscribe(
+      (data: ProdutoModel[]) => {
+        this.produtosCaneca = data.filter(produto => produto.categoria === 'caneca');
+        this.produtosFunko = data.filter(produto => produto.categoria === 'funko');
+        this.produtosChaveiro = data.filter(produto => produto.categoria === 'chaveiro');
+
+        console.log(data);
+        this.produtosCaneca.forEach(produto => {
+          produto.url = 'assets/'+produto.url;
+        });
+      },
+      (error) => {
+        console.error('Ocorreu um erro ao listar os produtos de caneca:', error);
+      }
+    );
+  }
+
   navigateToCanecaBabyYoda() {
     this.router.navigate(['/descricao-baby-yoda']); 
   }
@@ -44,4 +71,3 @@ export class BuscaCanecaComponent {
   }
  
 }
-

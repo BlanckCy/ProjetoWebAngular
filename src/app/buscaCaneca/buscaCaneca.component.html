@@ -26,9 +26,9 @@
         </div>
         <div class="row">
           <div class="col-md-12 menu"> <!--MENU-->
-            <div class="col-md-4 card "> <!--CARDS-->
+            <div *ngFor="let produto of produtosCaneca" class="col-md-4 card"> <!--CARDS-->
               <a (click)="navigateToCanecaBabyYoda()">
-                <img [src]= "CanecaBabyYoda" class="card-img-top cardproduto" alt="Caneca Baby Yoda">
+                <img [src]= "produto.url" class="card-img-top cardproduto" alt="produto.nome">
               </a>
               <div class="card-body">
                 <i class="bi bi-heart-fill iconHeart"></i>
@@ -36,9 +36,9 @@
                 <i class="bi bi-heart-fill iconHeart"></i>
                 <i class="bi bi-heart-fill iconHeart"></i>
                 <i class="bi bi-heart-fill iconHeart"></i>
-                <h5 class="card-title tituloGeral">Caneca Baby Yoda</h5>
+                <h5 class="card-title tituloGeral">{{produto.nome}}</h5>
                 <div class="preco">
-                  <p class="card-text">Por <b>R$ 59,90</b></p>
+                  <p class="card-text">Por <b>R$ {{produto.valor}}</b></p>
                   <a href="#" class="btn btn-outline-success btncompra">Comprar</a>
                 </div>
               </div>
@@ -69,7 +69,7 @@
                 <i class="bi bi-heart-fill iconHeart"></i>
                 <i class="bi bi-heart-fill iconHeart"></i>
                 <i class="bi bi-heart-fill iconHeart"></i>
-                <i class="bi bi-heart-half iconHeart"></i>
+                <i class="bi bi-heart-half iconHeart"></i> 
                 <h5 class="card-title tituloGeral">Caneca A Viagem de Chihiro</h5>
                 <div class="preco">
                   <p class="card-text">Por <b>R$ 59,90</b></p>
