@@ -67,7 +67,7 @@ body {
 
 
 .menu .card .preco .btncompra {
-    border-color: #f74780 !important;
+    border-color: #f74780 !important; 
     color: #f74780;
     font-weight: bolder; 
     width: 100%;          
