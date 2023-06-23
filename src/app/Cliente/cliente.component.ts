@@ -43,9 +43,25 @@ export class ClienteComponent {
       (error) => {
         this.mensagem = "ocorreu um erro no carregamento!"+ error;
       }
-    )       
-
+    ) 
   }
+
+  public verificarLogin(){
+    this.mensagem = "";
+    this.service.verificarLogin(this.model.email, this.model.senha).subscribe(
+      (data: ClienteModel) => {          
+        if (data.email != null) {
+          alert("Login Ok")
+        } else {
+          alert('Login inválido');
+        }   
+      }, 
+      (error) => {
+        console.error('Erro ao verificar login:', error);
+      }
+    ) 
+  }
+
   public listar(){
     this.service.listar().subscribe(
       (data: ClienteModel[]) => {            

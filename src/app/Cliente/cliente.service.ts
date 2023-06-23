@@ -62,38 +62,8 @@ export class ClienteService {
     return this.http.get<ClienteModel[]>("http://localhost:8070/api/cliente/loadinfo/");      
   }
 
-/*   public verificarLogin(obj: ClienteModel) : String{
-    let mensagem = '';
-    this.http.post<String>("http://localhost:8070/api/cliente/login/", obj).subscribe({
-      next: data =>
-      {
-        mensagem = "Registro salvo com sucesso!";
-      },
-      error: error => {
-        console.log(error);
-        mensagem = "Ocorreu um erro durante a inserção de dados!";
-      }
-    });    
-    return mensagem;
+  public verificarLogin(email: string, senha: string): Observable<ClienteModel> {
+    return this.http.post<ClienteModel>("http://localhost:8070/api/cliente/login/", { email, senha });
   }
-} */
-public verificarLogin(obj: ClienteModel): string {
-  let mensagem = '';
 
-  // Preencha os dados de email e senha no objeto 'obj'
-  obj.email = 'seu_email';
-  obj.senha = 'sua_senha';
-
-  this.http.post<string>("http://localhost:8070/api/cliente/login/", obj).subscribe({
-    next: data => {
-      mensagem = "Registro salvo com sucesso!";
-    },
-    error: error => {
-      console.log(error);
-      mensagem = "Ocorreu um erro durante a inserção de dados!";
-    }
-  });
-
-  return mensagem;
-}
 }

@@ -14,6 +14,7 @@ import { FooterComponent } from './Footer/footer.component';
 import { MenuComponent } from './Menu/menu.component';
 import { PrincipalComponent } from './Principal/principal.component';
 import { ClienteComponent } from './Cliente/cliente.component';
+import { LoginComponent } from './Login/login.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ClienteComponent } from './Cliente/cliente.component';
     PrincipalComponent,
     // UsuarioComponent,
     ProdutoComponent,
-    ClienteComponent
+    ClienteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
