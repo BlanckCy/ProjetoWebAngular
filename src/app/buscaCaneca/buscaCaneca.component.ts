@@ -9,13 +9,10 @@ import { ProdutoService } from '../Produto/produto.service';
   styleUrls: ['./buscaCaneca.component.css']
 })
 
-export class BuscaCanecaComponent implements OnInit{
-  CanecaBabyYoda = 'assets/caneca_baby_yoda.png';
-  CanecaSuperMan = 'assets/caneca_superman.png';
-  CanecaChihiro = 'assets/caneca_chihiro.png';
-  CanecaDumbo = 'assets/caneca_dumbo.png';
-  CanecaCapitaoMarvel = 'assets/caneca_captao_marvel.png';
-  CanecaSailorMoon = 'assets/caneca_sailormoon.png';  
+export class BuscaCanecaComponent implements OnInit{ 
+  caminhoRotaCaneca   = '';
+  caminhoRotaFunko    = '';
+  caminhoRotaChaveiro = '';
 
   public produtos: ProdutoModel[] = [];
   public produtosCaneca: ProdutoModel[] = [];
@@ -35,9 +32,20 @@ export class BuscaCanecaComponent implements OnInit{
         this.produtosFunko = data.filter(produto => produto.categoria === 'funko');
         this.produtosChaveiro = data.filter(produto => produto.categoria === 'chaveiro');
 
-        console.log(data);
         this.produtosCaneca.forEach(produto => {
+          produto.valorFormatado = produto.valor.toFixed(2).replace('.', ',');
           produto.url = 'assets/'+produto.url;
+          this.caminhoRotaCaneca = produto.nome.replace(/ /g, '-').toLowerCase().trim();
+        });
+        this.produtosFunko.forEach(produto => {
+          produto.valorFormatado = produto.valor.toFixed(2).replace('.', ',');
+          produto.url = 'assets/'+produto.url;
+          this.caminhoRotaFunko = produto.nome.replace(/ /g, '-').toLowerCase().trim();
+        });
+        this.produtosChaveiro.forEach(produto => {
+          produto.valorFormatado = produto.valor.toFixed(2).replace('.', ',');
+          produto.url = 'assets/'+produto.url;
+          this.caminhoRotaChaveiro = produto.nome.replace(/ /g, '-').toLowerCase().trim();
         });
       },
       (error) => {
