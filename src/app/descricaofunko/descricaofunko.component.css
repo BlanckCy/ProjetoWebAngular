@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.corpoProduto {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.corpoProduto .cardImagem{
+    display: flex;
+    justify-content: center;
+    border-color: #f74780 !important;
+}
+
+.corpoProduto .texto{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.corpoProduto .texto .valores {
+    border-left: thick double #f74780 ;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.corpoProduto .texto .valores .cardItens {
+    margin-top: 15%;
+}
+
+.corpoProduto .texto .valores .opQtd {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 2%;
+}
+
+.corpoProduto .texto .valores .opQtd .valInput{
+    width: 30%;
+}
+
+.corpoProduto .texto .valores .opQtd .divBtn{
+    width: 70%;
+}
+
+.corpoProduto .texto .valores .opQtd .divBtn .btncompra {
+    border-color: #f74780 !important;
+    color: #f74780;
+    font-weight: bolder;   
+    width: 100%;        
+}
+
+.corpoProduto .texto .valores .opQtd .divBtn .btncompra:hover {
+    background-color: #f74780 !important;
+    color: white;
+    font-weight: bolder;
+}
+
+.descricao{
+    /* padding-left: 5%;
+    padding-right: 4%; */
+    margin-bottom: 10%;    
+}
+
+.descricao .titulo{
+    border-top: thick double #f74780;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.footer {
+    background-color: #ffc1d5;
+}
+
+/* .texto.valores.quant{
+    width: 20%;
+}
+ */
+/* .btngeral {
+    color:#f74780 !important;
+    border-color: #f74780 !important;
+    font-weight: bold;
+    font-size:larger;
+    width: 100%;
+}
+
+.btngeral:hover{
+    background-color: #f74780 !important;
+    color:black !important;
+    font-weight: bold;
+} */
+
+/* .texto.valores.btngeral{
+    width: 80%;
+} */
+
+/* .valores{
+    font-family: 'Inter', sans-serif;
+    border-left: thick double #f74780 ;
+    padding-left: 5%;
+    padding-right: 5%;
+} */
+
+/* .valores .preco{
+    font-weight: bold;
+} */
+
+/* .valores .quant:focus-visible{
+    outline: 2px solid #f74780;
+} */
+
+@media screen and (max-width: 720px) {
+    .valores{
+        margin-left: 3%;
+    }
+}
+
