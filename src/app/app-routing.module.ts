@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PrincipalComponent } from './Principal/principal.component';
 import { ProdutoComponent } from './Produto/produto.component';
+// import { DescricaofunkoComponent } from './descricaofunko/descricaofunko.component';
+
 import { CadastroComponent } from './Cadastro/cadastro.component';
 import { LoginComponent } from './Login/login.component';
 import { BuscaCanecaComponent } from './buscaCaneca/buscaCaneca.component';
@@ -10,10 +12,10 @@ import { BuscaCanecaComponent } from './buscaCaneca/buscaCaneca.component';
 const routes: Routes = [
   { path: '', component: PrincipalComponent },
   { path: 'produto', component: ProdutoComponent },
+  // { path: 'produto-chaveiro', component:DescricaofunkoComponent }
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'buscaCaneca', component: BuscaCanecaComponent}
-
 ];
 
 @NgModule({
