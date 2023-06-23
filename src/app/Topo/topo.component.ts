@@ -27,7 +27,7 @@ export class TopoComponent {
   navigateToLogin() {
     this.loading = true;
     setTimeout(() => {
-      this.router.navigateByUrl('/login').then(() => {
+      this.router.navigateByUrl('/produto').then(() => {
         this.loading = false;
       });
     }, 1000);
